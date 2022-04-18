@@ -1,5 +1,5 @@
 <template>
-  <label :for="linputName" class="input__label"
+  <label :for="inputName" class="input__label"
     >{{ labelValue }}
     <div class="input-container">
       <span class="input__error">{{ spanError }}</span>
@@ -7,6 +7,7 @@
         @input.prevent="onInputChange"
         class="input"
         :id="inputName"
+        :name="inputName"
         type="text"
         :value="inputValue"
       />
