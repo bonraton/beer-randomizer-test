@@ -1,5 +1,7 @@
 <template>
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <p class="footer__title">2022 Oleg Zabolotskii</p>
+  </footer>
 </template>
 
 <script>
