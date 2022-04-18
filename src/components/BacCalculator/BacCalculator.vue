@@ -1,37 +1,26 @@
 <template>
-  <section
-    :class="
-      isVisible ? 'beer-card' : 'beer-card beer-card_hidden'
-    "
-  >
+  <section :class="isVisible ? 'beer-card' : 'beer-card beer-card_hidden'">
     <h3 class="beer-card__title">BAC calculator</h3>
     <form class="beer-card__form">
       <InputComponent
         inputName="weight"
         labelValue="Your weight in KG"
         :inputValue="weight"
-        spanError="error"
+        :spanError="weightValidation"
         @input="onInputChange"
       />
       <InputComponent
         inputName="pintAmount"
         labelValue="Pint amount"
         :inputValue="pintAmount"
-        spanError="error"
+        :spanError="alcValidation"
         @input="onInputChange"
       />
-      <p class="beer-card__text">
-        Your BAC is around {{ bac }} %
-      </p>
+      <p class="beer-card__text">Your BAC is around {{ bac }} %</p>
       <p class="beer-card__text beer-card__text_small">
         {{ jokeComputed }}
       </p>
-      <button
-        @click.prevent="onSubmit"
-        class="beer-card__button"
-      >
-        Calculate
-      </button>
+      <button @click.prevent="onSubmit" class="beer-card__button">Calculate</button>
     </form>
   </section>
 </template>
@@ -39,10 +28,9 @@
 <script>
 import './BacCalculator.css';
 import InputComponent from '../Input/InputComponent.vue';
-import {
-  calculateBac,
-  generateJoke,
-} from '../../helpers/functions';
+import { calculateBac, generateJoke } from '../../helpers/functions';
+import { validationMessages } from '../../helpers/constant';
+import { amountValidation, symbolValidation } from '../../helpers/validation';
 
 export default {
   components: {
@@ -61,16 +49,33 @@ export default {
       weight: '70',
       pintAmount: '1',
       joke: '',
+      errors: {
+        weight: '',
+        amount: '',
+      },
     };
   },
   computed: {
     jokeComputed() {
       return generateJoke(this.bac);
     },
+    weightValidation() {
+      return (
+        /* eslint-disable */
+        symbolValidation(this.weight, validationMessages.symbol) ||
+        amountValidation(this.weight, 610, validationMessages.weight)
+      );
+    },
+    alcValidation() {
+      return (
+        symbolValidation(this.pintAmount, validationMessages.symbol) ||
+        amountValidation(this.pintAmount, 77, validationMessages.alc)
+      );
+    },
   },
   methods: {
     onSubmit() {
-      const alc = localStorage.getItem('alcohol');
+      const alc = localStorage.getItem('alcohol') || '4,5%';
       this.bac = calculateBac(alc, this.weight, this.pintAmount);
     },
     onInputChange(e) {

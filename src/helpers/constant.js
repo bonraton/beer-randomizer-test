@@ -18,3 +18,11 @@ export const bacValues = {
   strong: 3,
   extremal: 4,
 };
+
+export const validationMessages = {
+  symbol: 'Wrong symbol',
+  weight: 'Too weighty',
+  alc: 'You are dead',
+};
+
+export const numberRegexp = /[0-9]/gi;
