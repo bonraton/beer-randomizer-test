@@ -1,5 +1,9 @@
 <template>
-  <section :class="isVisible ? 'beer-card' : 'beer-card beer-card_hidden'">
+  <section
+    :class="
+      isVisible ? 'beer-card' : 'beer-card beer-card_hidden'
+    "
+  >
     <h3 class="beer-card__title">BAC calculator</h3>
     <form class="beer-card__form">
       <InputComponent
@@ -16,9 +20,18 @@
         spanError="error"
         @input="onInputChange"
       />
-      <p class="beer-card__text">Your BAC is around {{ bac }} %</p>
-      <p class="beer-card__text beer-card__text_small">You are dead</p>
-      <button @click.prevent="onSubmit" class="beer-card__button">Calculate</button>
+      <p class="beer-card__text">
+        Your BAC is around {{ bac }} %
+      </p>
+      <p class="beer-card__text beer-card__text_small">
+        {{ jokeComputed }}
+      </p>
+      <button
+        @click.prevent="onSubmit"
+        class="beer-card__button"
+      >
+        Calculate
+      </button>
     </form>
   </section>
 </template>
@@ -26,7 +39,10 @@
 <script>
 import './BacCalculator.css';
 import InputComponent from '../Input/InputComponent.vue';
-import { calculateBac } from '../../helpers/functions';
+import {
+  calculateBac,
+  generateJoke,
+} from '../../helpers/functions';
 
 export default {
   components: {
@@ -44,12 +60,18 @@ export default {
       bac: 0,
       weight: '70',
       pintAmount: '1',
+      joke: '',
     };
+  },
+  computed: {
+    jokeComputed() {
+      return generateJoke(this.bac);
+    },
   },
   methods: {
     onSubmit() {
-      this.bac = calculateBac(localStorage.getItem('alcohol'), this.weight, this.pintAmount);
-      console.log(this.bac);
+      const alc = localStorage.getItem('alcohol');
+      this.bac = calculateBac(alc, this.weight, this.pintAmount);
     },
     onInputChange(e) {
       this[e.target.id] = e.target.value;
