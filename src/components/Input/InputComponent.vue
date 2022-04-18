@@ -1,6 +1,10 @@
 <template>
-  <label for="input" class="">
-    <input class="" />
+  <label for="input" class="input__label"
+    >label
+    <div class="input-container">
+      <span class="input__error">error</span>
+      <input class="input" />
+    </div>
   </label>
 </template>
 

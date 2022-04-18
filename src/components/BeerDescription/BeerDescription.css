@@ -1,15 +1,17 @@
 .beer-card {
+    position: relative;
     background-color: #FFD27C;
     padding: 1rem;
     border-radius: 3rem;
     box-shadow: 0 8px 8px rgba(0, 0, 0, .25);
     opacity: 1;
     display: grid;
-    max-width: 30%;
+    gap: 1rem;
 }
 
 .beer-card__title {
     text-align: center;
+    margin: 0;
 }
 
 .beer-card__list {

@@ -1,0 +1,47 @@
+@keyframes left {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+
+    50% {
+        transform: rotate(15deg) translate(15%, 0);
+    }
+
+    100% {
+        transform: rotate(0) translate(0, 0);
+    }
+}
+
+@keyframes right {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+
+    50% {
+        transform: rotate(-15deg) translate(-15%, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+}
+
+.main__illustrations {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.main__illustration {
+    max-width: 50%;
+}
+
+.main__illustration_right {
+    animation: right 1s linear;
+    animation-delay: 1s;
+}
+
+.main__illustration_left {
+    animation: left 1s linear;
+    animation-delay: 1s;
+}

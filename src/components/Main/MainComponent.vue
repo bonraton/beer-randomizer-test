@@ -1,8 +1,13 @@
 <template>
   <main class="main">
-    <BeerDescription />
-    <BacCalculator />
-    <BeerIllustrations />
+    <div class="main-container">
+      <BeerDescription />
+      <div class="main__interactive">
+        <button class="main__button">Click me</button>
+        <BeerIllustrations />
+      </div>
+      <BacCalculator />
+    </div>
   </main>
 </template>
 
