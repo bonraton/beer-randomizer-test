@@ -30,8 +30,9 @@
 }
 
 .beer-card__item {
-    font-weight: 500;
+    font-weight: 300;
     padding-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
 .beer-card__item_accent {

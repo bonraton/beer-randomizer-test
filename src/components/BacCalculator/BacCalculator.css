@@ -4,12 +4,15 @@
 }
 
 .beer-card__text {
+    align-self: center;
     text-align: center;
     margin: 0;
+    font-size: 1.3rem;
 }
 
 .beer-card__text_small {
-    font-size: 75%;
+    font-size: 1rem;
+    align-self: flex-start;
 }
 
 .beer-card__button {
