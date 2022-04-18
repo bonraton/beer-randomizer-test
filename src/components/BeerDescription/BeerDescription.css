@@ -1,0 +1,31 @@
+.beer-card {
+    background-color: #FFD27C;
+    padding: 1rem;
+    border-radius: 3rem;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .25);
+    opacity: 1;
+    display: grid;
+    max-width: 30%;
+}
+
+.beer-card__title {
+    text-align: center;
+}
+
+.beer-card__list {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 1px solid #D5A852;
+}
+
+.beer-card__list:last-child {
+    border-bottom: none;
+}
+
+.beer-card__item {
+    font-weight: 500;
+}
+
+.beer-card__item_small {
+    font-weight: 300;
+}
