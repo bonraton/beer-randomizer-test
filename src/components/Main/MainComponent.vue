@@ -1,10 +1,8 @@
 <template>
   <main class="main">
     <div class="main-container">
-      <BeerDescription />
-      <!-- <div class="main__interactive"> -->
-      <button class="main__button">Click me</button>
-      <!-- </div> -->
+      <BeerDescription :beerInfo="beerInfo" />
+      <button @click="getBeerInfo" class="main__button">Click me</button>
       <BacCalculator />
     </div>
     <BeerIllustrations />
@@ -12,6 +10,7 @@
 </template>
 
 <script>
+import getRandomBeer from '../../utils/beerApi';
 import BeerDescription from '../BeerDescription/BeerDescription.vue';
 import BeerIllustrations from '../BeerIllustrations/BeerIllustrations.vue';
 import BacCalculator from '../BacCalculator/BacCalculator.vue';
@@ -24,5 +23,16 @@ export default {
     BacCalculator,
   },
   name: 'MainComponent',
+  data() {
+    return {
+      beerInfo: {},
+    };
+  },
+  methods: {
+    async getBeerInfo() {
+      this.beerInfo = await getRandomBeer();
+      console.log(this.beerInfo);
+    },
+  },
 };
 </script>
