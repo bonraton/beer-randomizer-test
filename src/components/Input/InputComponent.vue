@@ -1,9 +1,15 @@
 <template>
-  <label for="input" class="input__label"
-    >label
+  <label :for="linputName" class="input__label"
+    >{{ labelValue }}
     <div class="input-container">
-      <span class="input__error">Incorrect symbol</span>
-      <input class="input" />
+      <span class="input__error">{{ spanError }}</span>
+      <input
+        @input.prevent="onInputChange"
+        class="input"
+        :id="inputName"
+        type="text"
+        :value="inputValue"
+      />
     </div>
   </label>
 </template>
@@ -13,5 +19,28 @@ import './InputComponent.css';
 
 export default {
   name: 'InputComponent',
+  props: {
+    inputName: {
+      type: String,
+      required: true,
+    },
+    labelValue: {
+      type: String,
+      required: true,
+    },
+    inputValue: {
+      type: String,
+      required: true,
+    },
+    spanError: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    onInputChange(e, value) {
+      this.$emit(e.target.name, value);
+    },
+  },
 };
 </script>
