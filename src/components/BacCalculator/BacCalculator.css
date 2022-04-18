@@ -1,12 +1,22 @@
+.beer-card__form {
+    height: 100%;
+    display: grid;
+}
+
 .beer-card__text {
     text-align: center;
+    margin: 0;
+}
+
+.beer-card__text_small {
+    font-size: 75%;
 }
 
 .beer-card__button {
     display: block;
+    font-weight: 700;
     background-color: #fff;
-    width: 50%;
-    padding: .5rem;
+    width: 40%;
     border-radius: 1rem;
     margin: 0 auto;
     box-shadow: 0 8px 8px rgba(0, 0, 0, .25);

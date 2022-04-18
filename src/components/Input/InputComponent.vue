@@ -2,7 +2,7 @@
   <label for="input" class="input__label"
     >label
     <div class="input-container">
-      <span class="input__error">error</span>
+      <span class="input__error">Incorrect symbol</span>
       <input class="input" />
     </div>
   </label>

@@ -2,12 +2,12 @@
   <main class="main">
     <div class="main-container">
       <BeerDescription />
-      <div class="main__interactive">
-        <button class="main__button">Click me</button>
-        <BeerIllustrations />
-      </div>
+      <!-- <div class="main__interactive"> -->
+      <button class="main__button">Click me</button>
+      <!-- </div> -->
       <BacCalculator />
     </div>
+    <BeerIllustrations />
   </main>
 </template>
 

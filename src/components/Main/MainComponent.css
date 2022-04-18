@@ -1,12 +1,7 @@
 .main-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1.2fr;
+    grid-template-columns: 2fr 1fr 2fr;
     gap: 1rem;
-}
-
-.main__interactive {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
 }
 
 .main__button {
@@ -25,4 +20,19 @@
 
 .main__button:hover {
     transform: rotate(360deg);
+}
+
+@media screen and (max-width: 511px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 20% 1fr;
+        grid-column: 1/-1;
+    }
+
+    .main__button {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 7rem;
+        height: 7rem;
+    }
 }

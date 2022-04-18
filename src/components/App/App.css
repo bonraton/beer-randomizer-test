@@ -9,3 +9,25 @@
     align-items: center;
     align-content: center;
 }
+
+html {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1279px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 967px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 513px) {
+    html {
+        font-size: 8px;
+    }
+}

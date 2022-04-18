@@ -29,11 +29,11 @@
 .main__illustrations {
     display: flex;
     justify-content: center;
-    align-self: flex-end;
+    margin-top: 10%;
 }
 
 .main__illustration {
-    max-width: 50%;
+    max-width: 20%;
 }
 
 .main__illustration_right {
@@ -44,4 +44,10 @@
 .main__illustration_left {
     animation: left 1s linear;
     animation-delay: 1s;
+}
+
+@media screen and (max-width: 768px) {
+    .main__illustration {
+        max-width: 30%;
+    }
 }

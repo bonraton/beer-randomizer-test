@@ -1,7 +1,7 @@
 <template>
   <div class="beer-card">
     <h3 class="beer-card__title">BAC calculator</h3>
-    <form class="form">
+    <form class="beer-card__form">
       <InputComponent />
       <InputComponent />
       <p class="beer-card__text">Your Bac 999%</p>
