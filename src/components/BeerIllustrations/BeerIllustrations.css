@@ -29,11 +29,11 @@
 .main__illustrations {
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 
 .main__illustration {
-    max-width: 20%;
+    max-width: 15%;
 }
 
 .main__illustration_right {
