@@ -14,6 +14,10 @@
 <script>
 import './BacCalculator.css';
 import InputComponent from '../Input/InputComponent.vue';
+import { calculateBac } from '../../helpers/functions';
+
+const a = calculateBac('4,5%', 70, 4);
+console.log(a);
 
 export default {
   components: {

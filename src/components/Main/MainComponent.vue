@@ -33,6 +33,7 @@ export default {
     async getBeerInfo() {
       this.beerInfo = await getRandomBeer();
       this.isCardVisible = true;
+      localStorage.setItem('beerAlc', this.beerInfo.alc);
     },
   },
 };
