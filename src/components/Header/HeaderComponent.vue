@@ -7,8 +7,8 @@
           {{ item }}
         </li>
       </ul>
+      <img src="../../images/default_avatar.png" class="profile__image" alt="avatar" />
     </div>
-    <img src="../../images/default_avatar.png" class="profile__image" alt="avatar" />
   </header>
 </template>
 

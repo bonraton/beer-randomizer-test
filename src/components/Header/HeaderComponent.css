@@ -3,13 +3,21 @@
     grid-template-columns: 5fr 2fr max-content;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    align-self: start;
     padding: 1rem 0;
     border-bottom: 2px solid #573A32;
 }
 
+.header__title {
+    font-size: 3rem;
+}
+
 .profile {
     text-align: end;
+    display: grid;
+    justify-self: end;
+    grid-template-columns: max-content max-content;
+    gap: 1rem;
 }
 
 .profile__info {
@@ -25,4 +33,28 @@
     background-size: contain;
     border-radius: 100%;
     border: .25rem solid #FFD27C;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .25);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .profile {
+        justify-self: center;
+    }
+
+    .profile__info {
+        order: 2;
+        text-align: left;
+    }
+
+    .profile__image {
+        justify-self: center;
+        order: 1;
+    }
 }
