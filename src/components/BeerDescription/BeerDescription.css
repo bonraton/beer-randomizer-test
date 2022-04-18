@@ -9,6 +9,12 @@
     grid-template-rows: minmax(2rem, max-content);
     gap: 1.5rem;
     align-items: center;
+    opacity: 1;
+    transition: opacity .8s ease;
+}
+
+.beer-card_hidden {
+    opacity: 0
 }
 
 .beer-card__title {

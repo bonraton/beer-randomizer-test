@@ -1,5 +1,5 @@
 <template>
-  <section class="beer-card">
+  <section :class="isVisible ? 'beer-card' : 'beer-card beer-card_hidden'">
     <h3 class="beer-card__title">Beer description</h3>
     <ul v-for="(item, index) in beerInfo" :key="index" class="beer-card__list">
       <li class="beer-card__item">{{ index }} :</li>
@@ -16,6 +16,10 @@ export default {
   props: {
     beerInfo: {
       type: Object,
+      required: true,
+    },
+    isVisible: {
+      type: Boolean,
       required: true,
     },
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="beer-card">
+  <section :class="isVisible ? 'beer-card' : 'beer-card beer-card_hidden'">
     <h3 class="beer-card__title">BAC calculator</h3>
     <form class="beer-card__form">
       <InputComponent />
@@ -8,7 +8,7 @@
       <p class="beer-card__text beer-card__text_small">You are dead</p>
       <button class="beer-card__button">Calculate</button>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -20,5 +20,11 @@ export default {
     InputComponent,
   },
   name: 'BacCalculator',
+  props: {
+    isVisible: {
+      type: Boolean,
+      required: true,
+    },
+  },
 };
 </script>

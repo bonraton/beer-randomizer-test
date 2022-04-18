@@ -1,9 +1,9 @@
 <template>
   <main class="main">
     <div class="main-container">
-      <BeerDescription :beerInfo="beerInfo" />
+      <BeerDescription :isVisible="isCardVisible" :beerInfo="beerInfo" />
       <button @click="getBeerInfo" class="main__button">Click me</button>
-      <BacCalculator />
+      <BacCalculator :isVisible="isCardVisible" />
     </div>
     <BeerIllustrations />
   </main>
@@ -26,12 +26,13 @@ export default {
   data() {
     return {
       beerInfo: {},
+      isCardVisible: false,
     };
   },
   methods: {
     async getBeerInfo() {
       this.beerInfo = await getRandomBeer();
-      console.log(this.beerInfo);
+      this.isCardVisible = true;
     },
   },
 };
