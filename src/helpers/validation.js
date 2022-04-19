@@ -1,4 +1,8 @@
-import { numberRegexp, validationMessages, minValidationValue } from './constant';
+import {
+  numberRegexp,
+  validationMessages,
+  minValidationValue,
+} from './constant';
 
 export function symbolValidation(value, errorMessage) {
   const matchedValue = !value ? [] : value.match(numberRegexp);
