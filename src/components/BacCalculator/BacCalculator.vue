@@ -76,7 +76,7 @@ export default {
       return symbol || range;
     },
     textClass() {
-      return this.bac ? 'beer-card__text' : 'beer-card__text beer-card__text_hidden';
+      return this.bac < 1 ? 'beer-card__text' : 'beer-card__text beer-card__text_hidden';
     },
   },
   methods: {
