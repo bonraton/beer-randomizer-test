@@ -20,7 +20,9 @@
       <p class="beer-card__text beer-card__text_small">
         {{ jokeComputed }}
       </p>
-      <button @click.prevent="onSubmit" class="beer-card__button">Calculate</button>
+      <button @click.prevent="onSubmit" :disabled="isValidated" class="beer-card__button">
+        Calculate
+      </button>
     </form>
   </section>
 </template>
@@ -53,11 +55,15 @@ export default {
         weight: '',
         amount: '',
       },
+      isDisabled: false,
     };
   },
   computed: {
     jokeComputed() {
       return generateJoke(this.bac);
+    },
+    isValidated() {
+      return this.weightValidation.length > 1 || this.alcValidation.length > 1;
     },
     weightValidation() {
       const symbol = symbolValidation(this.weight, validationMessages.symbol);
