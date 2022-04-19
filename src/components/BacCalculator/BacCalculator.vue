@@ -16,8 +16,8 @@
         :spanError="alcValidation"
         @input="onInputChange"
       />
-      <p class="beer-card__text">Your BAC is around {{ bac }} %</p>
-      <p class="beer-card__text beer-card__text_small">
+      <p :class="textClass">Your BAC is around {{ bac }} %</p>
+      <p :class="`${textClass} beer-card__text_small`">
         {{ jokeComputed }}
       </p>
       <button @click.prevent="onSubmit" :disabled="isValidated" class="beer-card__button">
@@ -74,6 +74,9 @@ export default {
       const symbol = symbolValidation(this.pintAmount, validationMessages.symbol);
       const range = rangeValidation(this.pintAmount, 77, validationMessages.alc);
       return symbol || range;
+    },
+    textClass() {
+      return this.bac ? 'beer-card__text' : 'beer-card__text beer-card__text_hidden';
     },
   },
   methods: {
