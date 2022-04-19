@@ -10,5 +10,6 @@ export default async function getRandomBeer() {
     style: response.style,
     ibu: response.ibu,
     blg: response.blg,
+    alc: response.alcohol,
   };
 }
