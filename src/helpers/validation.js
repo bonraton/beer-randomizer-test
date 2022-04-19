@@ -1,4 +1,4 @@
-import { numberRegexp } from './constant';
+import { numberRegexp, validationMessages, minValidationValue } from './constant';
 
 export function symbolValidation(value, errorMessage) {
   const matchedValue = !value ? [] : value.match(numberRegexp);
@@ -12,10 +12,12 @@ export function symbolValidation(value, errorMessage) {
   }
 }
 
-export function amountValidation(value, condition, errorMessage) {
+export function rangeValidation(value, condition, errorMessage) {
   switch (false) {
     case value <= condition:
       return errorMessage;
+    case !value.startsWith(minValidationValue):
+      return validationMessages.min;
     default:
       return symbolValidation(value, errorMessage);
   }

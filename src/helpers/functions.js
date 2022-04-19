@@ -11,7 +11,6 @@ export function calculateUserAge(birthDate) {
   } years`;
 }
 
-// Delete magic values;
 export function calculateBac(alc, weight, pint) {
   const alcohol = alc.replace(/%/gi, '').replace(/,/g, '.');
   const absoluteAlc = alcohol * pintVolume * pint * 10;

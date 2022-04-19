@@ -19,10 +19,13 @@ export const bacValues = {
   extremal: 4,
 };
 
+export const minValidationValue = 0;
+
 export const validationMessages = {
   symbol: 'Wrong symbol',
   weight: 'Too weighty',
   alc: 'You are dead',
+  min: 'To low',
 };
 
 export const numberRegexp = /[0-9]/gi;

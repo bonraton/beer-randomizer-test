@@ -30,7 +30,7 @@ import './BacCalculator.css';
 import InputComponent from '../Input/InputComponent.vue';
 import { calculateBac, generateJoke } from '../../helpers/functions';
 import { validationMessages } from '../../helpers/constant';
-import { amountValidation, symbolValidation } from '../../helpers/validation';
+import { symbolValidation, rangeValidation } from '../../helpers/validation';
 
 export default {
   components: {
@@ -60,17 +60,14 @@ export default {
       return generateJoke(this.bac);
     },
     weightValidation() {
-      return (
-        /* eslint-disable */
-        symbolValidation(this.weight, validationMessages.symbol) ||
-        amountValidation(this.weight, 610, validationMessages.weight)
-      );
+      const symbol = symbolValidation(this.weight, validationMessages.symbol);
+      const range = rangeValidation(this.weight, 610, validationMessages.weight);
+      return symbol || range;
     },
     alcValidation() {
-      return (
-        symbolValidation(this.pintAmount, validationMessages.symbol) ||
-        amountValidation(this.pintAmount, 77, validationMessages.alc)
-      );
+      const symbol = symbolValidation(this.pintAmount, validationMessages.symbol);
+      const range = rangeValidation(this.pintAmount, 77, validationMessages.alc);
+      return symbol || range;
     },
   },
   methods: {
