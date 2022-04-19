@@ -18,6 +18,14 @@
     transition: transform .3s ease;
 }
 
+.main__button:disabled {
+    opacity: .5;
+}
+
+.main__button:disabled:hover {
+    transform: none;
+}
+
 .main__button:hover {
     transform: rotate(360deg);
 }

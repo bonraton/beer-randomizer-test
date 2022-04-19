@@ -20,7 +20,6 @@
 <script>
 import './HeaderComponent.css';
 import getRandomProfile from '../../utils/profileApi';
-import defaultImage from '../../images/default_avatar.png';
 
 export default {
   name: 'HeaderComponent',
@@ -34,11 +33,10 @@ export default {
       let i = 0;
       if (i < 4) {
         setTimeout(() => {
+          i += i + 1;
           e.target.src = this.profile.avatar;
-          i += console.log(i);
         }, 3000);
       } else {
-        e.target.src = defaultImage;
         clearInterval();
       }
     },
