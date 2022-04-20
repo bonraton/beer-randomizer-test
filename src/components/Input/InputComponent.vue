@@ -11,6 +11,7 @@
         type="text"
         :value="inputValue"
         autocomplete="off"
+        maxlength="3"
       />
     </div>
   </label>
