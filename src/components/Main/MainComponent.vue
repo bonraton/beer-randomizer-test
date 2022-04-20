@@ -47,7 +47,7 @@ export default {
       localStorage.setItem('beerAlc', this.beerInfo.alc);
       setTimeout(() => {
         this.isAnimationStarted = false;
-      }, 1500);
+      }, 1700);
     },
     onPlayAudio(audio) {
       if (audio) {

@@ -3,7 +3,7 @@
         transform: rotate(0deg) translate(0, 0);
     }
 
-    75% {
+    50% {
         transform: rotate(15deg) translate(15%, 0);
     }
 
@@ -17,7 +17,7 @@
         transform: rotate(0deg) translate(0, 0);
     }
 
-    75% {
+    50% {
         transform: rotate(-15deg) translate(-15%, 0);
     }
 
@@ -35,16 +35,18 @@
 
 .main__illustration {
     max-width: 10rem;
+    animation-delay: .75s;
 }
 
 .main__illustration_right {
     animation: right .5s linear;
-    animation-delay: 1s;
+    animation-delay: 1.2s;
+    /* animation-delay: .5s; */
 }
 
 .main__illustration_left {
     animation: left .5s linear;
-    animation-delay: 1s;
+    animation-delay: 1.2s;
 }
 
 @media screen and (max-width: 767px) {
