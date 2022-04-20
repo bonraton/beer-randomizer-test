@@ -1,7 +1,7 @@
 <template>
-  <section :class="isVisible ? 'beer-card' : 'beer-card beer-card_hidden'">
+  <section :class="isVisible ? 'beer-card beer-card_form' : 'beer-card beer-card_hidden'">
     <h3 class="beer-card__title">BAC calculator</h3>
-    <form class="beer-card__form">
+    <form class="form">
       <InputComponent
         inputName="weight"
         labelValue="Your weight in KG"
@@ -76,7 +76,7 @@ export default {
       return symbol || range;
     },
     textClass() {
-      return this.bac < 1 ? 'beer-card__text' : 'beer-card__text beer-card__text_hidden';
+      return this.bac > 0 ? 'beer-card__text' : 'beer-card__text beer-card__text_hidden';
     },
   },
   methods: {

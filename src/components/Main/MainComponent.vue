@@ -3,14 +3,15 @@
     <div class="main-container">
       <BeerDescription :isVisible="isCardVisible" :beerInfo="beerInfo" />
       <button :disabled="isDisabled" @click="getBeerInfo" class="main__button">Click me</button>
+      <BeerIllustrations :isStarted="isAnimationStarted" />
       <BacCalculator :isVisible="isCardVisible" />
     </div>
-    <BeerIllustrations :isStarted="isAnimationStarted" />
   </main>
 </template>
 
 <script>
 import getRandomBeer from '../../utils/beerApi';
+import { defaultBeer } from '../../helpers/constant';
 import BeerDescription from '../BeerDescription/BeerDescription.vue';
 import BeerIllustrations from '../BeerIllustrations/BeerIllustrations.vue';
 import BacCalculator from '../BacCalculator/BacCalculator.vue';
@@ -26,7 +27,7 @@ export default {
   name: 'MainComponent',
   data() {
     return {
-      beerInfo: {},
+      beerInfo: defaultBeer,
       isCardVisible: false,
       isAnimationStarted: false,
     };
@@ -39,6 +40,7 @@ export default {
   methods: {
     async getBeerInfo() {
       this.beerInfo = await getRandomBeer();
+      console.log(this.beerInfo);
       this.isCardVisible = true;
       this.onPlayAudio(beerSound);
       this.isAnimationStarted = true;

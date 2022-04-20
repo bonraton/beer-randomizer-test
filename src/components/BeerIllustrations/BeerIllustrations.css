@@ -27,12 +27,14 @@
 }
 
 .main__illustrations {
-    display: flex;
-    justify-content: center;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    align-self: center;
+    justify-self: center;
 }
 
 .main__illustration {
-    max-width: 15%;
+    max-width: 10rem;
 }
 
 .main__illustration_right {
@@ -45,8 +47,10 @@
     animation-delay: 1s;
 }
 
-@media screen and (max-width: 768px) {
-    .main__illustration {
-        max-width: 30%;
+@media screen and (max-width: 767px) {
+    .main__illustrations {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
     }
 }
