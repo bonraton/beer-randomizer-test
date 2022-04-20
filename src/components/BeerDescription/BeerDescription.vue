@@ -1,5 +1,11 @@
 <template>
-  <section :class="isVisible ? 'beer-card' : 'beer-card beer-card_hidden'">
+  <section
+    :class="
+      isVisible
+        ? 'beer-card beer-card_description'
+        : 'beer-card beer-card_description beer-card_hidden'
+    "
+  >
     <h3 class="beer-card__title">Beer description</h3>
     <ul
       v-show="index !== 'id'"
@@ -15,9 +21,15 @@
 
 <script>
 import './BeerDescription.css';
+import { defaultBeer } from '../../helpers/constant';
 
 export default {
   name: 'BeerDescription',
+  data() {
+    return {
+      defaultInfo: defaultBeer,
+    };
+  },
   props: {
     beerInfo: {
       type: Object,
@@ -26,6 +38,11 @@ export default {
     isVisible: {
       type: Boolean,
       required: true,
+    },
+    computed: {
+      beerInfoComputed() {
+        return defaultBeer.alc;
+      },
     },
   },
 };

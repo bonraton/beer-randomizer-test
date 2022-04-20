@@ -1,20 +1,19 @@
 .beer-card {
     position: relative;
     background-color: #FFD27C;
-    padding: 2rem 2rem;
+    padding: 5%;
     border-radius: 3rem;
     box-shadow: 0 8px 8px rgba(0, 0, 0, .25);
     opacity: 1;
     display: grid;
     grid-template-rows: minmax(2rem, max-content);
-    gap: 1.5rem;
-    align-items: center;
-    opacity: 1;
+    gap: 1rem;
     transition: opacity .8s ease;
+    grid-row-start: 1;
 }
 
 .beer-card_hidden {
-    opacity: 0
+    opacity: 0;
 }
 
 .beer-card__title {
@@ -33,12 +32,12 @@
 
 .beer-card__list:last-child {
     border-bottom: none;
+    margin-bottom: 2rem;
 }
 
 .beer-card__item {
     font-weight: 300;
-    padding-bottom: 1rem;
-    font-size: 1.3rem;
+    padding-bottom: .5rem;
 }
 
 .beer-card__item_accent {
@@ -46,8 +45,9 @@
     letter-spacing: .1rem;
 }
 
-@media screen and (max-width: 511px) {
+@media screen and (max-width: 767px) {
     .beer-card {
         grid-row-start: 2;
+        grid-column-end: 2;
     }
 }
