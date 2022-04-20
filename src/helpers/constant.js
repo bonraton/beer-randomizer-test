@@ -26,6 +26,7 @@ export const validationMessages = {
   weight: 'Too weighty',
   alc: 'You are dead',
   min: 'To low',
+  required: 'Fill in the form',
 };
 
 export const defaultBeer = {
