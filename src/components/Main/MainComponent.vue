@@ -39,11 +39,10 @@ export default {
   },
   methods: {
     async getBeerInfo() {
-      this.beerInfo = await getRandomBeer();
-      console.log(this.beerInfo);
-      this.isCardVisible = true;
       this.onPlayAudio(beerSound);
       this.isAnimationStarted = true;
+      this.beerInfo = await getRandomBeer();
+      this.isCardVisible = true;
       localStorage.setItem('beerAlc', this.beerInfo.alc);
       setTimeout(() => {
         this.isAnimationStarted = false;
