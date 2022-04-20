@@ -12,7 +12,16 @@
           {{ item }}
         </li>
       </ul>
-      <img :src="this.profile.avatar" @error="onAvatarError" class="profile__image" alt="avatar" />
+      <div class="cont">
+        <img
+          v-show="!isLoading"
+          :src="this.profile.avatar"
+          @error="onAvatarError"
+          class="profile__image"
+          alt="avatar"
+        />
+        <PreloaderComponent :isVisible="isLoading" />
+      </div>
     </div>
   </header>
 </template>
@@ -20,25 +29,35 @@
 <script>
 import './HeaderComponent.css';
 import getRandomProfile from '../../utils/profileApi';
+import PreloaderComponent from '../Preloader/PreloaderComponent.vue';
 
 export default {
+  components: { PreloaderComponent },
   name: 'HeaderComponent',
   data() {
     return {
       profile: {},
+      isLoading: false,
     };
   },
   methods: {
     onAvatarError(e) {
       let i = 0;
+      this.isLoading = true;
       if (i < 4) {
         setTimeout(() => {
           i += i + 1;
           e.target.src = this.profile.avatar;
+          this.isLoading = false;
         }, 3000);
       } else {
+        this.isLoading = false;
         clearInterval();
       }
+    },
+    activatePreloader() {
+      this.isLoading = !this.isLoading;
+      console.log(this.isLoading);
     },
   },
   async created() {
