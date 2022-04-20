@@ -10,8 +10,10 @@
 }
 
 .input {
-    width: 60%;
-    justify-self: start;
+    /* width: 60%; */
+    width: 100%;
+    text-align: center;
+    /* justify-self: center; */
 }
 
 .input__label {
@@ -21,6 +23,7 @@
 }
 
 .input__error {
+    position: absolute;
     color: red;
     align-self: center;
     font-size: .75rem;
