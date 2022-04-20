@@ -28,4 +28,14 @@ export const validationMessages = {
   min: 'To low',
 };
 
+export const defaultBeer = {
+  id: '419',
+  brand: 'The most famous brand',
+  name: 'The best name',
+  style: 'The strangest styl',
+  ibu: 'The highest Ibu',
+  blg: 'Dark as night',
+  alc: 'Stronger than rum',
+};
+
 export const numberRegexp = /[0-9]/gi;
