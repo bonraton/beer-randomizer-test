@@ -10,6 +10,7 @@
         :name="inputName"
         type="text"
         :value="inputValue"
+        autocomplete="off"
       />
     </div>
   </label>
