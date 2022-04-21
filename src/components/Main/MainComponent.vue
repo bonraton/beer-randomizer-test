@@ -56,13 +56,10 @@ export default {
         this.isAnimationStarted = false;
       }, 1700);
     },
-    onPlayAudio() {
-      if (this.sound) {
-        this.sound.play();
+    onPlayAudio(sound) {
+      if (sound) {
+        sound.play();
       }
-    },
-    created() {
-      this.sound = new Audio(beerSound);
     },
   },
 };
