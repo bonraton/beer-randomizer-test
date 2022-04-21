@@ -56,7 +56,11 @@ export default {
     },
   },
   async created() {
-    this.profile = await getRandomProfile();
+    try {
+      this.profile = await getRandomProfile();
+    } catch (e) {
+      console.log(e);
+    }
   },
 };
 </script>

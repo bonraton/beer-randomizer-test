@@ -47,14 +47,18 @@ export default {
   },
   methods: {
     async getBeerInfo() {
-      this.onPlayAudio(this.sound);
-      this.isAnimationStarted = true;
-      this.beerInfo = await getRandomBeer();
-      this.isCardVisible = true;
-      localStorage.setItem('beerAlc', this.beerInfo.alc);
-      setTimeout(() => {
-        this.isAnimationStarted = false;
-      }, 1700);
+      try {
+        this.onPlayAudio(this.sound);
+        this.isAnimationStarted = true;
+        this.beerInfo = await getRandomBeer();
+        this.isCardVisible = true;
+        localStorage.setItem('beerAlc', this.beerInfo.alc);
+        setTimeout(() => {
+          this.isAnimationStarted = false;
+        }, 1700);
+      } catch (e) {
+        console.log(e);
+      }
     },
     onPlayAudio(sound) {
       if (sound) {
