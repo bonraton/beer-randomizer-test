@@ -1,5 +1,5 @@
 <template>
-  <section :class="isVisible ? 'beer-card beer-card_form' : 'beer-card beer-card_hidden'">
+  <section :class="beerCardClass">
     <h3 class="beer-card__title">BAC calculator</h3>
     <form class="form">
       <InputComponent
@@ -31,7 +31,7 @@
 import './BacCalculator.css';
 import InputComponent from '../Input/InputComponent.vue';
 import { calculateBac, generateJoke } from '../../helpers/functions';
-import { validationMessages } from '../../helpers/constant';
+import { validationMessages, heaviestPerson, beerRecord } from '../../helpers/constant';
 import { symbolValidation, rangeValidation } from '../../helpers/validation';
 
 export default {
@@ -62,17 +62,20 @@ export default {
     jokeComputed() {
       return generateJoke(this.bac);
     },
+    beerCardClass() {
+      return this.isVisible ? 'beer-card beer-card_form' : 'beer-card beer-card_hidden';
+    },
     isValidated() {
       return this.weightValidation.length > 1 || this.alcValidation.length > 1;
     },
     weightValidation() {
       const symbol = symbolValidation(this.weight, validationMessages.symbol);
-      const range = rangeValidation(this.weight, 610, validationMessages.weight);
+      const range = rangeValidation(this.weight, heaviestPerson, validationMessages.weight);
       return symbol || range;
     },
     alcValidation() {
       const symbol = symbolValidation(this.pintAmount, validationMessages.symbol);
-      const range = rangeValidation(this.pintAmount, 77, validationMessages.alc);
+      const range = rangeValidation(this.pintAmount, beerRecord, validationMessages.alc);
       return symbol || range;
     },
     textClass() {

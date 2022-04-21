@@ -20,10 +20,12 @@ export const bacValues = {
 };
 
 export const minValidationValue = 0;
+export const heaviestPerson = 610;
+export const beerRecord = 77;
 
 export const validationMessages = {
   symbol: 'Wrong symbol',
-  weight: 'Too weighty',
+  weight: 'Too heavy',
   alc: 'You are dead',
   min: 'To low',
   required: 'Fill in the form',
