@@ -2,7 +2,14 @@
   <main class="main">
     <div class="main-container">
       <BeerDescription :isVisible="isCardVisible" :beerInfo="beerInfo" />
-      <button :disabled="isDisabled" @click="getBeerInfo" class="main__button">Click me</button>
+      <button
+        :disabled="isDisabled"
+        @click="getBeerInfo"
+        @touchstart="getBeerInfo"
+        class="main__button"
+      >
+        Click me
+      </button>
       <BeerIllustrations :isStarted="isAnimationStarted" />
       <BacCalculator :isVisible="isCardVisible" />
     </div>
@@ -15,7 +22,7 @@ import { defaultBeer } from '../../helpers/constant';
 import BeerDescription from '../BeerDescription/BeerDescription.vue';
 import BeerIllustrations from '../BeerIllustrations/BeerIllustrations.vue';
 import BacCalculator from '../BacCalculator/BacCalculator.vue';
-import beerSound from '../../audio/beer_sound.mp3';
+import beerSound from '../../audio/beer_sound_shorter.mp3';
 import './MainComponent.css';
 
 export default {
@@ -30,6 +37,7 @@ export default {
       beerInfo: defaultBeer,
       isCardVisible: false,
       isAnimationStarted: false,
+      sound: new Audio(beerSound),
     };
   },
   computed: {
@@ -39,7 +47,7 @@ export default {
   },
   methods: {
     async getBeerInfo() {
-      this.onPlayAudio(beerSound);
+      this.onPlayAudio(this.sound);
       this.isAnimationStarted = true;
       this.beerInfo = await getRandomBeer();
       this.isCardVisible = true;
@@ -48,11 +56,13 @@ export default {
         this.isAnimationStarted = false;
       }, 1700);
     },
-    onPlayAudio(audio) {
-      if (audio) {
-        const sound = new Audio(audio);
-        sound.play();
+    onPlayAudio() {
+      if (this.sound) {
+        this.sound.play();
       }
+    },
+    created() {
+      this.sound = new Audio(beerSound);
     },
   },
 };

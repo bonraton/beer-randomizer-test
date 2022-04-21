@@ -46,6 +46,18 @@
 
 @media screen and (max-width: 767px) {
     .beer-card_form {
+        grid-column-end: 3;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .beer-card_form {
         grid-column-end: 2;
     }
 }
+
+/* @media screen and (max-width: 511px) {
+    .beer-card_form {
+        grid-column-end: 2;
+    }
+} */
