@@ -19,6 +19,7 @@
 }
 
 .main__button:disabled {
+    cursor: default;
     opacity: .5;
     transform: rotate(360deg);
 }
