@@ -1,0 +1,44 @@
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.main__button {
+    grid-column-end: 3;
+    grid-row-start: 1;
+    align-self: flex-start;
+    justify-self: center;
+    background: url(../../images/button.svg) no-repeat center center/cover;
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    font-size: .65rem;
+    font-weight: 700;
+    transition: transform .3s ease;
+    transform: rotate(0deg);
+}
+
+.main__button:disabled {
+    cursor: default;
+    opacity: .5;
+    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 767px) {
+    .main__button {
+        grid-row-start: 2;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem 1rem;
+    }
+
+    .main__button {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+    }
+}

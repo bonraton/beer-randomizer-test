@@ -1,0 +1,25 @@
+.input-container {
+    position: relative;
+    margin-top: .5rem;
+    background-color: #fff;
+    padding: .75rem 1rem;
+    border-radius: 1rem;
+    gap: .5rem;
+}
+
+.input {
+    width: 100%;
+    text-align: center;
+}
+
+.input__label {
+    text-align: center;
+}
+
+.input__error {
+    position: absolute;
+    color: red;
+    top: 35%;
+    left: 5%;
+    font-size: .75rem;
+}
