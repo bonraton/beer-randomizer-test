@@ -13,9 +13,7 @@
 }
 
 .input__label {
-    /* display: block; */
     text-align: center;
-    /* font-size: 1rem; */
 }
 
 .input__error {
