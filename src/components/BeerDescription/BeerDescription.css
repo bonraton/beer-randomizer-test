@@ -1,0 +1,51 @@
+.beer-card {
+    /* position: relative; */
+    display: grid;
+    grid-template-rows: minmax(2rem, max-content);
+    gap: 1rem;
+    grid-row-start: 1;
+    background-color: #FFD27C;
+    padding: 5%;
+    border-radius: 3rem;
+    opacity: 1;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .25);
+    transition: opacity .8s ease;
+}
+
+.beer-card_hidden {
+    opacity: 0;
+}
+
+.beer-card__title {
+    color: #fff;
+    letter-spacing: .5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.beer-card__list {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 1px solid #D5A852;
+}
+
+.beer-card__list:last-child {
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.beer-card__item {
+    font-weight: 300;
+    padding-bottom: .5rem;
+}
+
+.beer-card__item_accent {
+    font-weight: 700;
+    letter-spacing: .1rem;
+}
+
+@media screen and (max-width: 767px) {
+    .beer-card {
+        grid-row-start: 2;
+    }
+}
