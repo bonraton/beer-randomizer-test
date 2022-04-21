@@ -51,13 +51,8 @@ export default {
           this.isLoading = false;
         }, 3000);
       } else {
-        this.isLoading = false;
         clearInterval();
       }
-    },
-    activatePreloader() {
-      this.isLoading = !this.isLoading;
-      console.log(this.isLoading);
     },
   },
   async created() {
