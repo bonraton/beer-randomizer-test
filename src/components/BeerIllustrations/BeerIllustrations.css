@@ -35,7 +35,6 @@
 
 .main__illustration {
     max-width: 9rem;
-    animation-delay: .75s;
 }
 
 .main__illustration_right {
@@ -50,8 +49,6 @@
 
 @media screen and (max-width: 767px) {
     .main__illustrations {
-        grid-column-start: 2;
-        grid-column-end: 3;
         grid-row-start: 2;
     }
 
@@ -72,16 +69,3 @@
         max-width: 7rem;
     }
 }
-
-/* @media screen and (max-width: 511px) {
-    .main__illustrations {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 3;
-        margin-top: 10%;
-    }
-
-    .main__illustration {
-        max-width: 7rem;
-    }
-} */

@@ -12,7 +12,7 @@
           {{ item }}
         </li>
       </ul>
-      <div class="cont">
+      <div class="profile__image-container">
         <img
           v-show="!isLoading"
           :src="this.profile.avatar"

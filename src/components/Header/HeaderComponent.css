@@ -23,19 +23,16 @@
 .profile__info {
     display: grid;
     gap: 1rem;
+    font-weight: 600;
 }
 
 .profile__image {
-    font-size: 1rem;
-    width: 5rem;
-    height: 5rem;
+    width: inherit;
     justify-self: end;
-    background-size: contain;
     border-radius: 100%;
-    background: none;
 }
 
-.cont {
+.profile__image-container {
     position: relative;
     width: 5rem;
     height: 5rem;
@@ -59,10 +56,5 @@
     .profile__info {
         order: 2;
         text-align: left;
-    }
-
-    .profile__image {
-        justify-self: center;
-        order: 1;
     }
 }
