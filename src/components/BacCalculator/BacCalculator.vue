@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      const alc = localStorage.getItem('alcohol') || '4,5%';
+      const alc = localStorage.getItem('beerAlc') || '4,5%';
       this.bac = calculateBac(alc, this.weight, this.pintAmount);
     },
     onInputChange(e) {
